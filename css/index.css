@@ -614,7 +614,7 @@ footer{
 }
 
 .getQuote{
-  font-size: 3vw;
+  font-size: 6vmin;
   width: 100%;
   --borderWidth: 0px;
 
@@ -641,7 +641,7 @@ background-image: linear-gradient(45deg, #F4D03F 0%, #16A085 56%, #c4bb2d 100%);
 .getQuote-btn {
    margin: 10px;
    padding: 10px;
-   font-size:2vw;
+   font-size:4vmin;
    text-align: center;
    text-transform: uppercase;
    transition: 0.5s;
