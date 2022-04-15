@@ -687,3 +687,45 @@ border-radius: 10px;
    margin-left: 73%;
 }
  }
+ @media(min-width:768px){
+  .loader-heading{
+    font-size: 3.7vw;
+  }
+  .loader-heading > .counter{
+    font-size: 4vw;
+  }
+  .loader-heading-1{
+    font-size: 3rem;
+  }
+ }
+@media(max-width:767px){
+ .loading-heading{
+    font-size: 3rem;
+  }
+ 
+  .loader-heading-1{
+    font-size: 3rem;
+  }
+}
+@media(max-width:576px ){
+   .loading-heading{
+    font-size: 2rem;
+  }
+  .loader-heading > .counter{
+    font-size: 3rem;
+  }
+  .loader-heading-1{
+    font-size: 2rem;
+  }
+}
+@media(max-width:376px ){
+  .loader-heading > .counter{
+    font-size: 1.5rem;
+  }
+  .loading-heading{
+    font-size: 3rem;
+  }
+  .loader-heading-1{
+    font-size: 1.5rem;
+  }
+}
