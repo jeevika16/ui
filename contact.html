@@ -112,6 +112,7 @@
                   name="name"
                   id="name"
                   placeholder="Full Name"
+                  required
                 />
               </div>
               <div class="mt-3">
@@ -121,6 +122,7 @@
                   name="email"
                   id="email"
                   placeholder="Email"
+                  required
                 />
               </div>
               <div class="mt-3">
@@ -130,6 +132,7 @@
                   name="phone"
                   id="phone"
                   placeholder="Contact Number"
+                  required
                 />
               </div>
               <div class="mt-3">
@@ -139,6 +142,7 @@
                   name="companyname"
                   id="companyname"
                   placeholder="Company name"
+                  required
                 />
               </div>
               <div class="mt-3">
@@ -148,6 +152,7 @@
                   name="message"
                   id="message"
                   placeholder="Your Query"
+                  required
                 ></textarea>
               </div>
               <div class="mt-3 text-center py-4">
@@ -179,7 +184,7 @@
             console.log('error' + result);
         } else {
             const request = new XMLHttpRequest();
-            const url = 'https://api.telegram.org/bot5114529939:AAEeYvpTFQPwnz_GXXp2rba80nTQFM5rW2k/sendMessage?chat_id=-694718133&text=' + result;
+            const url = 'https://api.telegram.org/bot5114529939:AAEeYvpTFQPwnz_GXXp2rba80nTQFM5rW2k/sendMessage?chat_id=-1001522425368&text=' + result;
 
             request.open("post", url);
 
