@@ -115,7 +115,7 @@
           <h4 class="text-center my-2">Reverse Engineering</h4>
           <a class="block relative h-48 rounded overflow-hidden" href="./3.1-ReverseEngineeering.html">
             <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-              src="./images/card-3.png">
+              src="./images/3.1-Reverse-Engineering.jpg">
           </a>
           <div class="mt-4  text-center">
             <a class=" button-style" href="./3.1-ReverseEngineeering.html">view</a>
@@ -202,39 +202,61 @@
         <div class="form mt-5 form-style" >
           
           <h1 class="p-4 text-center contact-heading">Get in Touch With Us</h1>
-          <form class="px-5">
+          <form class="px-5" id="ContactForm">
+            <div class="alert">Your message has been sent</div>
             <div class="mt-4">
               <input
                 class="border border-gray-300 p-3 rounded w-full text-base leading-4 placeholder-gray-600 text-gray-600"
-                type="text" name="" id="" placeholder="Full Name" />
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Full Name"
+                required
+              />
             </div>
             <div class="mt-3">
               <input
                 class="border border-gray-300 p-3 rounded w-full text-base leading-4 placeholder-gray-600 text-gray-600"
-                type="email" name="" id="" placeholder="Email" />
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+                required
+              />
             </div>
             <div class="mt-3">
               <input
                 class="border border-gray-300 p-3 rounded w-full text-base leading-4 placeholder-gray-600 text-gray-600"
-                type="number" name="" id="" placeholder="Contact Number" />
+                type="number"
+                name="phone"
+                id="phone"
+                placeholder="Contact Number"
+                required
+              />
             </div>
             <div class="mt-3">
               <input
                 class="border border-gray-300 p-3 rounded w-full text-base leading-4 placeholder-gray-600 text-gray-600"
-                type="text" name="" id="" placeholder="Company name" />
+                type="text"
+                name="companyname"
+                id="companyname"
+                placeholder="Company name"
+                required
+              />
             </div>
             <div class="mt-3">
               <textarea
                 class="border border-gray-300 p-3 rounded w-full text-base leading-4 placeholder-gray-600 text-gray-600"
-                rows="3" name="" id="" placeholder="Your Query"></textarea>
+                rows="3"
+                name="message"
+                id="message"
+                placeholder="Your Query"
+                required
+              ></textarea>
             </div>
             <div class="mt-3 text-center py-4">
-              <button
-                class="button-style mx-auto">
-                Submit
-              </button>
+              <button class="button-style mx-auto" onclick="testVariable()">Submit</button>
             </div>
-
           </form>
         </div>
       </div>
@@ -457,7 +479,43 @@ function backToTop() {
 </script>
 
 <script src="https://kit.fontawesome.com/58d0d9ef9a.js" crossorigin="anonymous"></script>
+<script>
+  function testVariable() {
+var strText = document.getElementById("name").value;
+var strText1 = document.getElementById("phone").value;
+var strText2 = document.getElementById("email").value;
+var strText3 = document.getElementById("companyname").value;
+var strText4 = document.getElementById("message").value;
+var result = 'Message from michaelelectronics.in' + '%0ACustomer Name:  ' + strText + '%0APhone Number: ' + strText1 + '%0AEmail: ' + strText2 + '%0ACompany Name: ' + strText3 + '%0AMessage: ' + strText4 ;
+var finalMsg = encodeURI(result);
+document.getElementById("ContactForm").addEventListener("submit", (e) => {
+   e.preventDefault();
+   if (strText == "" || strText1 == "" || strText2 == "" || strText3 == "" || strText4 == "" ) {
+       console.log('error' + result);
+   } else {
+       const request = new XMLHttpRequest();
+       const url = 'https://api.telegram.org/bot5114529939:AAEeYvpTFQPwnz_GXXp2rba80nTQFM5rW2k/sendMessage?chat_id=-1001522425368&text=' + result;
 
+       request.open("post", url);
+
+       request.send();
+       document.getElementById("ContactForm").reset()
+       document.querySelector('.alert').style.display = 'block';
+
+
+
+// Hide alert after 3 seconds
+setTimeout(function(){
+document.querySelector('.alert').style.display = 'none';
+},5000);
+
+       window.open('#', '_self');
+   }
+
+});
+  }  
+
+</script> 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
